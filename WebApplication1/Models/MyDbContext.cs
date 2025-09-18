@@ -1,6 +1,9 @@
-﻿namespace WebApplication1.Models
+﻿using Microsoft.EntityFrameworkCore;
+using WebApplication1.Models;
+
+public class MyDbContext : DbContext
 {
-    public class MyDbContext
-    {
-    }
+    public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
+
+    public DbSet<Person> People { get; set; }
 }

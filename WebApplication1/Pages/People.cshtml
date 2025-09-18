@@ -1,6 +1,17 @@
 ﻿@page
-@model WebApplication1.Pages.PeopleModel
-@{
+@model PeopleModel
 
-	<h1>HumenbaseOnTrack</h1>
-}
+<h2>Добавить человека</h2>
+
+<form method="post">
+    <input type="text" asp-for="Name" />
+    <button type="submit">Добавить</button>
+</form>
+
+<h3>Список людей:</h3>
+<ul>
+    @foreach (var person in Model.PeopleList)
+    {
+        <li>@person.Name</li>
+    }
+</ul>
