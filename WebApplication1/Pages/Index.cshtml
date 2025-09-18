@@ -1,11 +1,28 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Главная - Поиск авиабилетов";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <h3>The time on the server is @DateTime.Now</h3>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div clsas="hero-section">
+    <h1>Найдите идеальный рейс</h1>
+
+    <form method="get" asp-page="/Search">
+
+        <div class="form-group">
+            <label>Откуда</label>
+            <input type="text" class="form-control" asp-for="Searchrequest.From" />
+        </div>
+        <div class="form-group">
+            <label>Куда</label>
+            <input type="text" class="form-control" asp-for="Searchrequest.To" />
+        </div>
+        <div class="form-group">
+            <label>Дата вылета</label>
+            <input type="date" class="form-control" asp-for="Searchrequest.DepartureDate" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="margin-top: 20px;">
+            Найти билеты
+        </button>
+    </form>
 </div>
